@@ -40,7 +40,7 @@
                 <archive>
                   <manifest>
                     <addClasspath>true</addClasspath>
-                    <mainClass>com.oss.example.Example</mainClass>
+                    <mainClass>com.oss.application.Application</mainClass>
                   </manifest>
                 </archive>
                 <descriptorRefs>

@@ -1,12 +1,9 @@
-package com.oss.example;
+package com.oss.application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;  
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.web.bind.annotation.PathVariable;  
 import org.springframework.web.bind.annotation.RequestMapping;  
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +13,9 @@ import com.oss.impl.DelegateImpl;
   
 @RestController  
 @EnableAutoConfiguration  
-public class Example extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer{  
+public class Application{  
 	
-	protected static Logger logger=LoggerFactory.getLogger(Example.class);
+	protected static Logger logger=LoggerFactory.getLogger(Application.class);
 	
     @RequestMapping("/")  
     String home() {  
@@ -32,11 +29,6 @@ public class Example extends SpringBootServletInitializer implements EmbeddedSer
     }  
     
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Example.class, args);
+        SpringApplication.run(Application.class, args);
     }
-
-	@Override
-	public void customize(ConfigurableEmbeddedServletContainer container) {
-		container.setPort(8081);
-	}
 }  
